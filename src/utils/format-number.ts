@@ -13,7 +13,7 @@ import isPresent from '@/utils/is-present'
 
 interface OptionsProps extends Intl.NumberFormatOptions {
   locale?: string
-  style?: string
+  // style?: string
 }
 
 export const formatNumber = (

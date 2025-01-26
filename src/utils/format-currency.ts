@@ -20,7 +20,7 @@ export const formatCurrency = (
     currencyDisplay?: string
   } = {},
 ) => {
-  const { locale = 'pt-br', currency = 'BRL', style = 'currency' } = opts
+  const { locale = 'pt-br', currency = 'BRL' } = opts
   const stripSymbols = opts.currencyDisplay === 'none'
   if (isBlank(value)) {
     return ''
@@ -28,7 +28,7 @@ export const formatCurrency = (
 
   let result = new Intl.NumberFormat(locale, {
     currency,
-    style,
+    // style,
     maximumFractionDigits: 2,
   }).format(Number(value))
 
