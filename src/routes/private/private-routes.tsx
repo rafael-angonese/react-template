@@ -7,6 +7,7 @@ import EditCompanyPage from '@/pages/companies/edit/edit-company-page'
 import ListCompaniesPage from '@/pages/companies/list/list-companies-page'
 import NewCompanyPage from '@/pages/companies/new/new-company-page'
 import ShowCompanyPage from '@/pages/companies/show/show-company-page'
+import ListProductsPage from '@/pages/products/list/list-products-page'
 
 const HomePage = lazy(() => import('@/pages/home/home-page'))
 const NotFoundPage = lazy(() => import('@/pages/not-found/not-found-page'))
@@ -34,6 +35,8 @@ export const PrivateRoutes: React.FC = () => {
         <Route path="/companies/show/:id" element={<ShowCompanyPage />} />
         <Route path="/companies/edit/:id" element={<EditCompanyPage />} />
         <Route path="/companies/new" element={<NewCompanyPage />} />
+
+        <Route path="/products" element={<ListProductsPage />} />
 
         <Route path="/examples/*" element={<ExamplesPage />} />
 

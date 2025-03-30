@@ -8,7 +8,7 @@ import { useAuthStore } from '@/store/use-auth-store'
 import LocalStorage from '@/utils/local-storage'
 import { sleep } from '@/utils/sleep'
 
-export const apiBaseURL = `${env.API_BASE_URL}/api`
+export const apiBaseURL = `${env.API_BASE_URL}`
 
 export const api = axios.create({
   baseURL: apiBaseURL,

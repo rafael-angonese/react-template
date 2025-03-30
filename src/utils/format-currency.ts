@@ -1,39 +1,41 @@
-/* Examples
-const price = 100
-
-formatCurrency(price)
-
-formatCurrency(price, {
-  currencyDisplay: 'none',
-})
-
-*/
-
 import isBlank from '@/utils/is-blank'
+
+interface FormatCurrencyOptions {
+  locale?: string
+  currency?: string
+  currencyDisplay?: 'symbol' | 'narrowSymbol' | 'code' | 'name' | 'none'
+  maximumFractionDigits?: number
+  minimumFractionDigits?: number
+}
 
 export const formatCurrency = (
   value?: number | string,
-  opts: {
-    locale?: string
-    currency?: string
-    style?: string
-    currencyDisplay?: string
-  } = {},
-) => {
-  const { locale = 'pt-br', currency = 'BRL' } = opts
-  const stripSymbols = opts.currencyDisplay === 'none'
-  if (isBlank(value)) {
+  opts: FormatCurrencyOptions = {},
+): string => {
+  const {
+    locale = 'pt-BR',
+    currency = 'BRL',
+    currencyDisplay = 'symbol',
+    maximumFractionDigits = 2,
+    minimumFractionDigits = 2,
+  } = opts
+
+  if (isBlank(value) || isNaN(Number(value))) {
     return ''
   }
 
-  let result = new Intl.NumberFormat(locale, {
+  const formatter = new Intl.NumberFormat(locale, {
+    style: currencyDisplay === 'none' ? 'decimal' : 'currency',
     currency,
-    // style,
-    maximumFractionDigits: 2,
-  }).format(Number(value))
+    currencyDisplay: currencyDisplay === 'none' ? undefined : currencyDisplay,
+    maximumFractionDigits,
+    minimumFractionDigits,
+  })
 
-  if (stripSymbols) {
-    result = result.split('$')[1].trim()
+  let result = formatter.format(Number(value))
+
+  if (currencyDisplay === 'none') {
+    result = result.replace(/[^\d.,-]/g, '').trim()
   }
 
   return result

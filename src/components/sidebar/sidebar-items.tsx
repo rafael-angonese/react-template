@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Building2, Code, Home, Users } from 'lucide-react'
+import { Building2, Code, Home, Package, Users } from 'lucide-react'
 
 import { NavLink } from '@/components/sidebar/nav-link'
 
@@ -19,6 +19,10 @@ export const SidebarItems: React.FC = () => {
         <NavLink to="/companies">
           <Building2 />
           Empresas
+        </NavLink>
+        <NavLink to="/products">
+          <Package />
+          Produtos
         </NavLink>
         <NavLink to="/examples">
           <Code />
