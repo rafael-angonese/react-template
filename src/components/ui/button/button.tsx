@@ -5,13 +5,13 @@ import { Loader2 } from 'lucide-react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 export const buttonVariants = tv({
-  base: 'flex items-center justify-center text-foreground rounded-lg w-fit text-center font-medium focus:outline-none focus:ring-2',
+  base: 'flex items-center justify-center text-foreground rounded-lg w-fit text-center font-medium focus:outline-hidden focus:ring-2',
   variants: {
     variant: {
       solid: '',
       outlined: '',
       ghost: '',
-      link: 'text-primary hover:!text-primary/70 hover:underline underline-offset-4 !p-0 bg-background !ring-0',
+      link: 'text-primary hover:text-primary/70! hover:underline underline-offset-4 p-0! bg-background ring-0!',
     },
     color: {
       primary: '',
@@ -34,7 +34,7 @@ export const buttonVariants = tv({
       true: 'rounded-full',
     },
     disabled: {
-      true: 'opacity-50 !cursor-not-allowed',
+      true: 'opacity-50 cursor-not-allowed!',
     },
     shadow: {
       true: 'shadow-lg',

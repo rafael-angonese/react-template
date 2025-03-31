@@ -42,10 +42,10 @@ const LogoutDialog: React.FC<Props> = ({ isOpen, setOpen }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose} className="!text-secondary">
+        <Button onClick={handleClose} className="text-secondary!">
           Cancelar
         </Button>
-        <Button onClick={handleLogout} className="!text-danger">
+        <Button onClick={handleLogout} className="text-danger!">
           Sair da minha conta
         </Button>
       </DialogActions>

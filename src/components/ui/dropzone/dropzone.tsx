@@ -7,7 +7,7 @@ import { FileRejections } from './file-rejections'
 import { RenderDragMessage } from './render-drag-message'
 
 const dropzoneVariants = tv({
-  base: 'border rounded border-gray-500 border-dashed cursor-pointer',
+  base: 'border rounded-sm border-gray-500 border-dashed cursor-pointer',
   variants: {
     isDragReject: {
       true: 'border-red-500',

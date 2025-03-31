@@ -106,6 +106,6 @@ export const CustomWithClassName: Story = {
   args: {
     ...defaultProps,
     className:
-      'bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg',
+      'bg-linear-to-tr from-pink-500 to-yellow-500 text-white shadow-lg',
   },
 }
