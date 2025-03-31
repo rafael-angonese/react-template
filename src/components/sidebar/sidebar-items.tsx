@@ -16,10 +16,10 @@ export const SidebarItems: React.FC = () => {
           <Users />
           Usuários
         </NavLink>
-        <NavLink to="/companies">
+        {/* <NavLink to="/companies">
           <Building2 />
           Empresas
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/products">
           <Package />
           Produtos
