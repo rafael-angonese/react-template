@@ -19,6 +19,9 @@ Recomenda-se a leitura da documentação desse projeto.
 * Extensões recomendadas [EXTENSIONS.MD](./docs/EXTENSIONS.MD).
 ---
 
+sdfsf
+sdfsf
+
 # **🔖 Notas de versão**
 
 - [CHANGELOG.MD](./docs/CHANGELOG.MD).
