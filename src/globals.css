@@ -1,6 +1,42 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --background: #f1f5f9;
+    --foreground: #1e293b;
+
+    --primary: #0068ff;
+    --primary-foreground: #f1f5f9;
+
+    --secondary: #a21caf;
+    --secondary-foreground: #f1f5f9;
+
+    --success: #22c55e;
+    --success-foreground: #f1f5f9;
+
+    --warning: #eab308;
+    --warning-foreground: #f1f5f9;
+
+    --error: #ef4444;
+    --error-foreground: #f1f5f9;
+
+    --muted: #4f7091;
+    --muted-foreground: #f1f5f9;
+
+    @variant dark {
+      --background: #0f172a;
+      --foreground: #f1f5f9;
+    }
+  }
+
+  /* .dark {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+  } */
+}
 
 @theme {
   --color-background: var(--background);
@@ -25,60 +61,11 @@
   --color-muted-foreground: var(--muted-foreground);
 }
 
-@layer base {
-
-  :root {
-    --background: #f1f5f9;
-    --foreground: #1e293b;
-
-    --primary: #0068ff;
-    --primary-foreground: #f1f5f9;
-
-    --secondary: #a21caf;
-    --secondary-foreground: #f1f5f9;
-
-    --success: #22c55e;
-    --success-foreground: #f1f5f9;
-
-    --warning: #eab308;
-    --warning-foreground: #f1f5f9;
-
-    --error: #ef4444;
-    --error-foreground: #f1f5f9;
-
-    --muted: #4f7091;
-    --muted-foreground: #f1f5f9;
-  }
-
-  .dark {
-    --background: #0f172a;
-    --foreground: #f1f5f9;
-
-    --primary: #0068ff;
-    --primary-foreground: #f1f5f9;
-
-    --secondary: #a21caf;
-    --secondary-foreground: #f1f5f9;
-
-    --success: #22c55e;
-    --success-foreground: #f1f5f9;
-
-    --warning: #eab308;
-    --warning-foreground: #f1f5f9;
-
-    --error: #ef4444;
-    --error-foreground: #f1f5f9;
-
-    --muted: #4f7091;
-    --muted-foreground: #f1f5f9;
-  }
-}
-
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+  scrollbar-color: var(--foreground) var(--background);
 }
 
 /* Chrome, Edge, and Safari */
@@ -91,9 +78,9 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--foreground));
+  background-color: var(--foreground);
   border-radius: 10px;
-  border: 10px solid hsl(var(--foreground));
+  border: 10px solid var(--foreground);
 }
 /* ===== End Scrollbar CSS ===== */
 
