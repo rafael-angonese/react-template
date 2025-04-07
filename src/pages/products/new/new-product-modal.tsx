@@ -15,19 +15,20 @@ import { InputNumber } from '@/components/ui/input-number/input-number'
 import { InputText } from '@/components/ui/input-text/input-text'
 import { formLabels } from '@/pages/products/new/form-labels'
 import { CreateProductType } from '@/pages/products/new/productSchema'
+import { useCreateProduct } from '@/pages/products/new/use-create-product'
 import { useNewProduct } from '@/pages/products/new/use-new-product'
 import { useProductForm } from '@/pages/products/new/useProductForm'
-import { createProduct } from '@/repositories/products/create-product'
 import handlingRequestError from '@/utils/handling-request-error/handling-request-error'
 
 export const NewProductModal: React.FC = () => {
   const { isModalOpen, setIsModalOpen } = useNewProduct()
 
   const methods = useProductForm()
+  const { mutateAsync, isPending } = useCreateProduct()
 
   const onSubmit = async (data: CreateProductType) => {
     try {
-      await createProduct(data)
+      await mutateAsync(data)
       handleClose()
     } catch (error) {
       handlingRequestError(error, formLabels)
@@ -93,7 +94,13 @@ export const NewProductModal: React.FC = () => {
               </Grid>
 
               <div className="flex justify-end mt-4">
-                <Button color="success">Salvar</Button>
+                <Button
+                  isLoading={isPending}
+                  disabled={isPending}
+                  color="success"
+                >
+                  Salvar
+                </Button>
               </div>
             </form>
           </FormProvider>
