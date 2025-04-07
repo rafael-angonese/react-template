@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useTitle } from '@/hooks/use-title'
 import { PageLayout } from '@/layouts/page-layout'
+import { NewProductModal } from '@/pages/products/new/new-product-modal'
 
 import { Filters } from './filters'
 import { Header } from './header'
@@ -21,6 +22,8 @@ const ListProductsPage: React.FC = () => {
         <Loading />
         <Pagination />
       </PageLayout>
+
+      <NewProductModal />
     </>
   )
 }
