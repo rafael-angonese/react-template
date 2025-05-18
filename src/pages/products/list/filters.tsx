@@ -12,7 +12,7 @@ export const Filters: React.FC = () => {
   return (
     <>
       <Grid className="mb-4">
-        <GridItem>
+        <GridItem xs={12} sm={6} md={4} lg={3} xl={3}>
           <FormLabel>Código</FormLabel>
           <InputText
             value={id}
@@ -21,7 +21,7 @@ export const Filters: React.FC = () => {
           />
         </GridItem>
 
-        <GridItem>
+        <GridItem xs={12} sm={6} md={4} lg={3} xl={3}>
           <FormLabel>Nome</FormLabel>
           <InputText
             value={name}

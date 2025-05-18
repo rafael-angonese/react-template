@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
 
-import { Grid as MUIGrid, GridProps as MUIGridProps } from '@mui/material'
+import { cnBase } from 'tailwind-variants'
 
-export interface GridProps extends MUIGridProps {}
+export interface GridProps extends ComponentProps<'div'> {}
 
-export const Grid: React.FC<GridProps> = ({ spacing = 1, ...props }) => {
+export const Grid: React.FC<GridProps> = ({ className, ...props }) => {
   return (
     <>
-      <MUIGrid container spacing={spacing} {...props} />
+      <div
+        className={cnBase('grid grid-cols-12 gap-4', className)}
+        {...props}
+      />
     </>
   )
 }

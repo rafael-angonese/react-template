@@ -9,5 +9,14 @@ export const getDesignTokens = (isDarkMode: boolean) => {
         secondary: 'hsl(var(--foreground))',
       },
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 500,
+        md: 600,
+        lg: 700,
+        xl: 1536,
+      },
+    },
   })
 }
